@@ -16,7 +16,7 @@ importers:
         version: 6.11.0
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@types/node@18.19.65)(typescript@5.7.2)
+        version: 10.9.2(@types/node@18.19.67)(typescript@5.7.2)
       winston:
         specifier: 3.17.0
         version: 3.17.0
@@ -37,8 +37,8 @@ importers:
         specifier: 10.0.10
         version: 10.0.10
       '@types/node':
-        specifier: 18.19.65
-        version: 18.19.65
+        specifier: 18.19.67
+        version: 18.19.67
       chai:
         specifier: 4.5.0
         version: 4.5.0
@@ -175,8 +175,8 @@ packages:
   '@types/mocha@10.0.10':
     resolution: {integrity: sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==}
 
-  '@types/node@18.19.65':
-    resolution: {integrity: sha512-Ay5BZuO1UkTmVHzZJNvZKw/E+iB3GQABb6kijEz89w2JrfhNA+M/ebp18pfz9Gqe9ywhMC8AA8yC01lZq48J+Q==}
+  '@types/node@18.19.67':
+    resolution: {integrity: sha512-wI8uHusga+0ZugNp0Ol/3BqQfEcCCNfojtO6Oou9iVNGPTL6QNSdnUdqq85fRgIorLhLMuPIKpsN98QE9Nh+KQ==}
 
   '@types/semver@7.5.0':
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
@@ -1545,7 +1545,7 @@ snapshots:
 
   '@types/mocha@10.0.10': {}
 
-  '@types/node@18.19.65':
+  '@types/node@18.19.67':
     dependencies:
       undici-types: 5.26.5
 
@@ -2716,14 +2716,14 @@ snapshots:
     optionalDependencies:
       tsconfig-paths: 3.14.2
 
-  ts-node@10.9.2(@types/node@18.19.65)(typescript@5.7.2):
+  ts-node@10.9.2(@types/node@18.19.67)(typescript@5.7.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 18.19.65
+      '@types/node': 18.19.67
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
