@@ -49,7 +49,7 @@ const parseEmail = (line: string) => line.split(",")[0];
   const batchSize = Math.floor(emailList.length / count);
   logHandler.log(
     "info",
-    `Found ${emailList.length} emails. Splitting into ${count} files of ${batchSize} emails...`
+    `Found ${emailList.length.toString()} emails. Splitting into ${count.toString()} files of ${batchSize.toString()} emails...`
   );
   for (const num of countRange) {
     const emails =
@@ -58,8 +58,8 @@ const parseEmail = (line: string) => line.split(",")[0];
         : emailList.splice(0, batchSize);
     logHandler.log(
       "info",
-      `Writing email${num}.csv from ${parseEmail(emails[0])} to ${parseEmail(
-        emails[emails.length - 1]
+      `Writing email${num}.csv from ${parseEmail(emails[0]!)} to ${parseEmail(
+        emails[emails.length - 1]!
       )} (${emails.length} records)`
     );
     await writeFile(

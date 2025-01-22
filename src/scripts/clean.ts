@@ -10,7 +10,7 @@ import { range } from "../utils/range";
   const count = getCount();
   await unlink(join(process.cwd(), "data", "emailList.csv"));
   for (const num of range(count)) {
-    await unlink(join(process.cwd(), "data", `email${num}.csv`));
+    await unlink(join(process.cwd(), "data", `email${num.toString()}.csv`));
   }
   logHandler.log("info", "Files are cleaned. See you next week~!");
 })();

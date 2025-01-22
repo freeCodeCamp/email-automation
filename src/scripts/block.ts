@@ -6,7 +6,7 @@ import { logHandler } from "../utils/logHandler";
 (async () => {
   const email = process.argv[2];
   await asyncExec(
-    `aws --profile freeCodeCamp sesv2 put-suppressed-destination --reason COMPLAINT --email-address ${email}`
+    `aws --profile freeCodeCamp sesv2 put-suppressed-destination --reason COMPLAINT --email-address ${email?.toString()}`
   );
   logHandler.info("Added to AWS suppression list.");
   if (!process.env.MONGO_URI) {
