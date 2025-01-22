@@ -16,7 +16,7 @@ import { logHandler } from "../utils/logHandler";
     "info",
     `Found ${set.size} emails sent. Reading email list from data/${process.argv[2]}...`
   );
-  const emailsPath = join(process.cwd(), "data", process.argv[2]);
+  const emailsPath = join(process.cwd(), "data", process.argv[2]!);
   const emails = await readFile(emailsPath, "utf-8");
   const emailsArray = emails.split("\n").slice(1);
 

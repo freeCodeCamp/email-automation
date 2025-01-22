@@ -7,14 +7,12 @@
 export const getCount = () => {
   if (!process.env.DROPLET_COUNT) {
     throw new Error("Please set the droplet count in the .env file.");
-    process.exit(1);
   }
   const parsed = parseInt(process.env.DROPLET_COUNT, 10);
   if (isNaN(parsed)) {
     throw new Error(
       `Please provide a valid count. Received: ${process.argv[2]}`
     );
-    process.exit(1);
   }
   return parsed;
 };
