@@ -4,7 +4,7 @@ import { logHandler } from "../utils/logHandler";
 (async () => {
   logHandler.log("info", "Copying mongo.env to db-query");
   await asyncExec(
-    `scp data/mongo.env db-query:/home/freecodecamp/scripts/emails/prod.env`
+    `scp -l 1000 data/mongo.env db-query:/home/freecodecamp/scripts/emails/prod.env`
   );
 
   logHandler.log("info", "Droplet ready to start database query.");

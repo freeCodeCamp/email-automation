@@ -4,7 +4,7 @@ import { logHandler } from "../utils/logHandler";
 (async () => {
   logHandler.log("info", "Fetching email list from server...");
   await asyncExec(
-    "scp db-query:/home/freecodecamp/scripts/emails/email.csv data/emailList.csv"
+    "scp -l 1000 db-query:/home/freecodecamp/scripts/emails/email.csv data/emailList.csv"
   );
   logHandler.log("info", `Destroying droplet db-query...`);
   await asyncExec(
