@@ -36,7 +36,7 @@ const parseEmail = (line: string) => line.split(",")[0];
   for (const num of countRange) {
     logHandler.log("info", `Copying email body to email${num}...`);
     await asyncExec(
-      `scp data/emailBody.txt email${num}:/home/freecodecamp/email-blast/prod/emailBody.txt`
+      `scp -l 1000 data/emailBody.txt email${num}:/home/freecodecamp/email-blast/prod/emailBody.txt`
     );
   }
   logHandler.log("info", "Reading emails...");
