@@ -11,7 +11,15 @@ import { logHandler } from "../utils/logHandler";
   logHandler.log("info", "Run the database query on db-query.");
   logHandler.log(
     "info",
-    "Your commands will be:\nexport OP_SERVICE_ACCOUNT_TOKEN=<token here>\ncd scripts/emails && screen\nop run --env-file='./prod.env' -- node get-emails.js email.csv"
+    "You will need to connect to the droplet with: ssh db-query"
+  );
+  logHandler.log(
+    "info",
+    "Once connected, your commands will be:\nexport OP_SERVICE_ACCOUNT_TOKEN=<token here>\ncd scripts/emails && screen\nop run --env-file='./prod.env' --no-masking -- node get-emails.js email.csv"
+  );
+  logHandler.log(
+    "info",
+    "Be sure to run those commands INDIVIDUALLY, and in order."
   );
   logHandler.log(
     "info",

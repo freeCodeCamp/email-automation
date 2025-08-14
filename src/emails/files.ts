@@ -29,7 +29,11 @@ const parseEmail = (line: string) => line.split(",")[0];
   );
   const quote = body
     .split("\n")
-    .find((line) => line.startsWith("Quote of the Week: "));
+    .find(
+      (line) =>
+        line.startsWith("Quote of the Week: ") ||
+        line.startsWith("Joke of the Week:")
+    );
   logHandler.log("info", quote);
 
   logHandler.log("info", "Copying email body to servers.");
@@ -78,10 +82,23 @@ const parseEmail = (line: string) => line.split(",")[0];
   );
   logHandler.log(
     "info",
-    "Then ssh into the servers and start the process with:\nexport OP_SERVICE_ACCOUNT_TOKEN=<token here>\ncd email-blast && screen\nop run --env-file='./prod.env' -- pnpm start"
+    "You will need to connect to the droplet with: ssh email[num]\nReplacing [num] with the number of each server. For you, that would be:"
+  );
+  logHandler.log("info", countRange.map((count) => `email${count}`).join("\n"));
+  logHandler.log(
+    "info",
+    `Once you have connected to an email droplet, start the process with these commands.\nRUN THESE INDIVIDUALLY AND IN ORDER:\n\nexport OP_SERVICE_ACCOUNT_TOKEN=<token here>\ncd email-blast && screen\npnpm start`
+  );
+  logHandler.log(
+    "info",
+    "You can then close your SSH connection. If you want to check on the progress of the blast, you would:\n\nssh email[num]\nscreen -r -d\n\nReplacing [num] with the server number (starts at 1). You should see the progress meters."
   );
   logHandler.log(
     "info",
     "When the blast is complete, return here and run\npnpm emails:teardown."
+  );
+  logHandler.log(
+    "info",
+    "For security, we recommend running pnpm scripts:clean IMMEDIATELY after starting the blast on every droplet. You will be reminded to do so when you tearn down the email servers."
   );
 })();

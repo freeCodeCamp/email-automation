@@ -49,7 +49,9 @@ const getData = (data: string) => {
     lines.push(`  User freecodecamp`);
     lines.push("");
   }
-
+  lines.push(
+    "If you already have an existing host record for one of these (such as Host email1), DO NOT add a second one. Update the IP of the existing one with the new address."
+  );
   lines.push("When you are ready to start the process, run\npnpm emails:files");
   logHandler.log("info", lines.join("\n"));
 })();

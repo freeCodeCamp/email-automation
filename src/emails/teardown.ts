@@ -14,6 +14,6 @@ import { range } from "../utils/range";
   }
   logHandler.log(
     "info",
-    "Droplets destroyed. Now clean your files with:\npnpm scripts:clean"
+    "Droplets destroyed. If you did not do so already, clean your files with:\npnpm scripts:clean"
   );
 })();

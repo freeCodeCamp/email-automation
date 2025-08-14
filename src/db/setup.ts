@@ -43,6 +43,11 @@ const getData = (data: string) => {
   lines.push(`  HostName ${ip}`);
   lines.push(`  User freecodecamp`);
   lines.push("");
-  lines.push("Once done, return here and run:\npnpm db:files");
+  lines.push(
+    "If you already have a db-query host, DO NOT add a second one. Update the IP of the existing one with the new address."
+  );
+  lines.push(
+    "Once you have updated your SSH config, return here and run:\npnpm db:files"
+  );
   logHandler.log("info", lines.join("\n"));
 })();
