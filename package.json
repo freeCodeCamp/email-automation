@@ -36,7 +36,7 @@
   "homepage": "https://github.com/naomi-lgbt/nodejs-typescript-template#readme",
   "dependencies": {
     "dotenv": "16.6.1",
-    "mongodb": "6.20.0",
+    "mongodb": "6.21.0",
     "ts-node": "10.9.2",
     "winston": "3.18.3"
   },
