@@ -40,7 +40,7 @@ const parseEmail = (line: string) => line.split(",")[0];
   for (const num of countRange) {
     logHandler.log("info", `Copying email body to email${num}...`);
     await asyncExec(
-      `scp -l 1000 data/emailBody.txt email${num}:/home/freecodecamp/email-blast/prod/emailBody.txt`
+      `rsync -av data/emailBody.txt email${num}:/home/freecodecamp/email-blast/prod/emailBody.txt`
     );
   }
   logHandler.log("info", "Reading emails...");
@@ -72,7 +72,7 @@ const parseEmail = (line: string) => line.split(",")[0];
     );
     logHandler.log("info", `Copying email${num}.csv to email${num}...`);
     await asyncExec(
-      `scp -l 1000 data/email${num}.csv email${num}:/home/freecodecamp/email-blast/prod/validEmails.csv`
+      `rsync -av data/email${num}.csv email${num}:/home/freecodecamp/email-blast/prod/validEmails.csv`
     );
   }
   logHandler.log("info", "Servers are ready to send email.");
